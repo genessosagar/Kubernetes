@@ -1,0 +1,6 @@
+https://kubernetes.io/docs/concepts/storage/storage-classes/
+
+https://www.kubermatic.com/blog/keeping-the-state-of-apps-5-introduction-to-storage-classes/
+
+- Dynamic storage provisioning
+- 

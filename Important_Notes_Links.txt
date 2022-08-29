@@ -1,0 +1,21 @@
+Kubernetes API reference
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/
+
+-------
+SERVICE
+-------
+* Service will have a clusterIP (Virtual IP)
+* It forwards the requests to one of the matching pods -> based on labels and selectors
+
+----------
+KUBE PROXY
+----------
+* Each node will have a kube-proxy
+* Kube-proxy will ensure that the networking will work
+* Load balance traffic that is desired for services via ClusterIP and node ports
+* Kube-Proxy can run in one of three modes
+    1. Userspace (Kubernetes is no longer using the userspace)
+    2. iptables
+    3. IPVS (This is choosen usually in production - more efficient - CNI installed will choose)
+
+

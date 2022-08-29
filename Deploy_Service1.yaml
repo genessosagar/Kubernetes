@@ -1,3 +1,4 @@
+# Pod to Service Networking
 # Deployment Manifest
 # The following manifest is taken from  this link - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#deployment-v1-apps
 
@@ -25,6 +26,7 @@ spec:
         image: nginx:1.14
 
 # Service Manifest
+# For every service we create we get a clusterIP
 apiVersion: v1
 kind: Service
 metadata:

@@ -1,0 +1,5 @@
+StorageClass
+PV
+PVC
+Headless Service
+ClusterIP
