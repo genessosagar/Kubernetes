@@ -1,0 +1,41 @@
+Kubernetes Architecture:
+- Control Plane (Master Nodes)
+  - Kube API Server
+  - ETCD Distributed Datastore
+  - Kubelet
+  - Kube Scheduler -> It will just schedule the pods - this will identify the resource availability in worker nodes and will schdeule the desired pods on to the worker nodes
+        - Gives infromation back to the API server -> Now the API server will talk to Kubelet to deploy the pods
+  - Kube contorller -> Checks the desired number of nodes, replicas etc are available or not
+    - Node controller
+    - Replication Controller
+    - endpoint-controller
+    - secret config controller
+  - Cloud Control Manager (Optional) 
+  - Kube Proxy
+- Worker Plane (Worker Nodes)
+  - Kubelet - Kube api server will always be in communication with the Kubelet on the worker node every second
+  - CRE (Container Run time Engine) - Docker, CRIO, containerd
+  - KubeProxy
+  
+  
+$ kubectl label node node_name node-role.kubernetes.ip/worker=yes
+$ kubectl cluster-info
+$ kubectl get nodes
+$ kubectl describe node node_name
+$ kubectl get ns
+$ kubectl get pods (Shows the pods in default namespace)
+$ kubectl get pods -A (Shows pods in all namespaces)
+$ kubectl get pods -n kube-system
+$ kubectl get pods --namespace kube-system
+$ kubectl get events
+$ kubectl get service
+$ kubectl get service -A
+$ kubectl run testpod1 --image=nginx:latest
+$ kubectl get pods
+$ kubectl expose pod testpod1 --port=8000 --target-port=80 --type=NodePort
+$ kubectl get svc
+$ kubectl create deployment testdeploy01 --image=sreeharshav/rollingupdate:v5 --replicas 4
+$ kubectl get pods -o wide
+$ watch kubectl get pods
+$ kubectl delete pod pod_name
+$ kubectl expose deploy testpod01 --port=9000 --target-port=80 --type=NodePort
