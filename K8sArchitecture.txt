@@ -17,7 +17,9 @@ Kubernetes Architecture:
   - CRE (Container Run time Engine) - Docker, CRIO, containerd
   - KubeProxy
   
-  
+$ kubectl get nodes
+$ kubectl get pods
+$ kubectl get pods -A
 $ kubectl label node node_name node-role.kubernetes.ip/worker=yes
 $ kubectl cluster-info
 $ kubectl get nodes
